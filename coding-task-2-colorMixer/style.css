@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+header {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0 2rem;
+  gap: 0.5rem;
+}
+main {
+  display: flex;
+  flex-grow: 10;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+#i1 {
+  accent-color: red;
+}
+#i2 {
+  accent-color: green;
+}
+#i3 {
+  accent-color: blue;
+}
+span {
+  font-size: 1.5rem;
+}
+#APIColor {
+  margin-left: auto;
+}
