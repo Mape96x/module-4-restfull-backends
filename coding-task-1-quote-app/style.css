@@ -2,5 +2,54 @@
   box-sizing: border-box;
 }
 #author {
-  font-size: 0.75rem;
+  font-size: 1rem;
+  color: black;
+  opacity: 0.75;
+  text-shadow: none;
+}
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+header {
+  background-color: #783937;
+  display: flex;
+  align-items: center;
+  padding: 2rem 5rem;
+}
+main {
+  background-color: #f1ac88;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 86%;
+}
+#getQuote {
+  margin-left: auto;
+  background-color: #a7beae;
+  border: 0.125rem solid black;
+  box-shadow: 5px 5px;
+  transition: 2ms ease-in-out;
+  transition: 0.5s;
+  border-radius: 1rem;
+}
+#getQuote:hover {
+  font-size: 1.5rem;
+}
+p {
+  padding: 0 1rem;
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+  text-shadow: 1px 1px white;
+}
+h1 {
+  color: #a7beae;
+  text-shadow: 4px 4px black;
+}
+body {
+  display: flex;
+  flex-direction: column;
 }

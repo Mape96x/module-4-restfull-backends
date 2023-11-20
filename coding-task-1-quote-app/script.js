@@ -5,17 +5,15 @@ const state = {
   quote: [],
 };
 
-getQuote.addEventListener("click", () => {
+getQuote.addEventListener("click", () =>
   fetch("https://dummy-apis.netlify.app/api/quote")
-    .then((Response) => {
-      return Response.json();
-    })
+    .then((Response) => Response.json())
     .then((data) => {
       state.author = data.author;
       state.quote = data.quote;
       renderQuote();
-    });
-});
+    })
+);
 
 function renderQuote() {
   const pTagQuote = document.createElement("p");
