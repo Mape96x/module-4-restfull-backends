@@ -7,7 +7,6 @@
 .personDiv {
   margin: 1rem;
   padding: 1rem 0;
-
   border-radius: 2rem;
   position: relative;
   background-color: white;
@@ -71,4 +70,16 @@ body {
 
 .pendingCount {
   border-radius: 1rem solid black;
+}
+
+.header {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 20px;
+  border: 0.125rem solid black;
 }

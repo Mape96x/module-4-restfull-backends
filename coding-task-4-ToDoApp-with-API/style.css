@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --clr-background: rgba(248, 240, 186, 0.35);
+  --clr-btnBackground: #117084;
+  --clr-btnColor: #fefefe;
+}
+li {
+  list-style-type: none;
+  color: black;
+}
+header,
+h1 {
+  margin: 0;
+  color: #117084;
+}
+body {
+  background-color: var(--clr-background);
+}
+html {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+button {
+  margin-bottom: 0.3rem;
+  background-color: var(--clr-btnBackground);
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.9rem;
+  color: var(--clr-btnColor);
+  border: 0.125rem solid var(--clr-btnBackground);
+}
+main {
+  opacity: 1;
+}
+div {
+  background-image: url(bilder/sunrise-lake-art-work-2560x1440.jpg);
+  background-position: 50% 70%;
+  opacity: 1;
+  padding: 4rem 10rem;
+  border-radius: 1rem;
+  box-shadow: 0.1rem 0.1rem#135669;
+}
+button:hover {
+  background-color: #f4e19f;
+  color: #135669;
+  border: 0.125rem solid #135669;
+}
+input {
+  opacity: 0.8;
+}

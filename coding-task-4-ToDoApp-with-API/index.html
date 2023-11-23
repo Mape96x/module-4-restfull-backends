@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <header>
+            <h1>Todo App</h1>
+        </header>
+        <main>
+            <ul id="filterList">
+                <li>
+                    <input type="radio" id="all" name="schwul" value="All" checked>
+                    <label>All</label><br>
+                </li>
+                <li><input type="radio" id="open" name="schwul" value="Open">
+                    <label>Open</label><br>
+                </li>
+                <li><input type="radio" id="done" name="schwul" value="Done">
+                    <label>Done</label><br>
+                </li>
+            </ul>
+            <button id="rmvDone">Remove done Todos</button>
+            <br>
+            <input type="text" id="addTodo" name="addTodo" placeholder="Add Todo">
+
+            <button id="addTodoBtn">Add</button>
+            <ul id="todoList">
+                <li></li>
+            </ul>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

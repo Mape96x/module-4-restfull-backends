@@ -82,7 +82,7 @@ function changeState(e) {
   renderCount();
 }
 function renderCount() {
-  pendingCount.innerText = counter;
+  pendingCount.innerText = "Pending: " + counter;
   localStorage.setItem("counter", counter);
 }
 fetchAPI();
