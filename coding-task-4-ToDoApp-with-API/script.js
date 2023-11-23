@@ -66,6 +66,9 @@ function renderTodoList(arr) {
 
     const label = document.createElement("label");
     label.textContent = currentTodo.description;
+    if (checkbox.checked) {
+      newLiEl.style = "text-decoration: line-through;";
+    }
 
     newLiEl.appendChild(checkbox);
     newLiEl.appendChild(label);
@@ -91,6 +94,11 @@ function changeState(e) {
   const currentID = currentBox.id;
   const updatedTodo = currentBox;
   currentBox.done = !currentBox.done;
+  if (currentBox.done.checked) {
+    e.target.parentElement.style = "text-decoration: none;";
+  } else {
+    e.target.parentElement.style = "text-decoration: line-through;";
+  }
   changeTodoAPI(currentID, updatedTodo);
 }
 function duplicateCheck(actualDescription) {
