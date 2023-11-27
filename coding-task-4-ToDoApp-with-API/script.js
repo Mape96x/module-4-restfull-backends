@@ -10,7 +10,6 @@ filterList.addEventListener("change", filterObj);
 rmvDone.addEventListener("click", removeDone);
 document.addEventListener("keypress", addObjByEnter);
 getTodosAPI();
-renderTodoList(todos);
 
 function getTodosAPI() {
   fetch(API)
@@ -28,8 +27,7 @@ function addTodoAPI(newTodo) {
   })
     .then((Response) => Response.json())
     .then((JSONData) => {
-      todos.push(JSONData);
-      renderTodoList(todos);
+      getTodosAPI();
     });
 }
 function changeTodoAPI(id, updatedTodo) {
@@ -40,7 +38,7 @@ function changeTodoAPI(id, updatedTodo) {
   })
     .then((Response) => Response.json())
     .then((JSONData) => {
-      renderTodoList(todos);
+      getTodosAPI();
     });
 }
 function deleteTodoAPI(id) {
@@ -49,7 +47,7 @@ function deleteTodoAPI(id) {
   })
     .then((Response) => Response.json())
     .then((JSONData) => {
-      renderTodoList(todos);
+      getTodosAPI();
     });
 }
 function renderTodoList(arr) {
@@ -94,11 +92,6 @@ function changeState(e) {
   const currentID = currentBox.id;
   const updatedTodo = currentBox;
   currentBox.done = !currentBox.done;
-  if (currentBox.done.checked) {
-    e.target.parentElement.style = "text-decoration: none;";
-  } else {
-    e.target.parentElement.style = "text-decoration: line-through;";
-  }
   changeTodoAPI(currentID, updatedTodo);
 }
 function duplicateCheck(actualDescription) {
@@ -135,9 +128,7 @@ function filterObj(e) {
 function removeDone() {
   let filteredTodo = [];
   for (const currentTodo of todos) {
-    if (!currentTodo.done) {
-      filteredTodo.push(currentTodo);
-    } else {
+    if (currentTodo.done) {
       deleteTodoAPI(currentTodo.id);
     }
   }
