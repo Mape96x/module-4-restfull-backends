@@ -42,7 +42,7 @@ function changeTodoAPI(id, updatedTodo) {
     });
 }
 function deleteTodoAPI(id) {
-  fetch(API + "/" + id, {
+  return fetch(API + "/" + id, {
     method: "DELETE",
   })
     .then((Response) => Response.json())
@@ -126,13 +126,17 @@ function filterObj(e) {
   renderTodoList(filteredTodo);
 }
 function removeDone() {
-  let filteredTodo = [];
+  const fetches = [];
   for (const currentTodo of todos) {
     if (currentTodo.done) {
-      deleteTodoAPI(currentTodo.id);
+      fetches.push(deleteTodoAPI(currentTodo.id));
     }
   }
-  todos = filteredTodo;
+  Promise.all(fetches).then((values) => {
+    if (values.indexOf(undefined) != -1) {
+      getTodosAPI();
+    }
+  });
 }
 function trimValue(input) {
   const trimmedInput = input.trim();
